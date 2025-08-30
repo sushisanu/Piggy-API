@@ -1,0 +1,151 @@
+{
+  "info": {
+    "name": "PiggyQuest API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Register",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"username\": \"test1\", \"password\": \"P@ssw0rd\"}"
+        },
+        "url": {
+          "raw": "http://localhost:8888/auth/register"
+        }
+      }
+    },
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"username\": \"test1\", \"password\": \"P@ssw0rd\"}"
+        },
+        "url": {
+          "raw": "http://localhost:8888/auth/login"
+        }
+      }
+    },
+    {
+      "name": "List Pigs",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8888/pigs"
+        }
+      }
+    },
+    {
+      "name": "Feed",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"pig_id\": 1, \"food_id\": 1}"
+        },
+        "url": {
+          "raw": "http://localhost:8888/pigs/feed"
+        }
+      }
+    },
+    {
+      "name": "Quests Daily",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8888/quests/daily"
+        }
+      }
+    },
+    {
+      "name": "Claim Quest",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"quest_id\": 1}"
+        },
+        "url": {
+          "raw": "http://localhost:8888/quests/claim"
+        }
+      }
+    },
+    {
+      "name": "Add Inventory",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"food_id\": 1, \"qty\": 10}"
+        },
+        "url": {
+          "raw": "http://localhost:8888/inventory/add"
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "token",
+      "value": ""
+    }
+  ]
+}
