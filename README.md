@@ -1,6 +1,3 @@
-PiggyQuest - Pure PHP Backend (Complete per assignment)
-======================================================
-
 How to run (MAMP default port 8888 example)
 -------------------------------------------
 1. Place this folder in MAMP htdocs or point your virtual host to the `public` folder.
